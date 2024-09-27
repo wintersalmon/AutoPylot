@@ -1,6 +1,5 @@
 # AutoPylot
-Application 개발에 LLM 을 활용하여 효율성과 생산성을 향상시키는 프로젝트
-A project that leverages LLMs in application development to enhance efficiency and productivity.
+- Application 개발에 LLM 을 활용하여 효율성과 생산성을 향상시키는 프로젝트
 
 ## 1. 프로젝트 개요
 
