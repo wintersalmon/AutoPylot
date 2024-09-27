@@ -1,8 +1,18 @@
 services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - "${HOME}/.ollama:/root/.ollama"
+
   server:
     build:
       context: .
       dockerfile: server/Dockerfile
     container_name: server
+    depends_on:
+      - ollama
     ports:
       - "8000:8000"
