@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-fast-api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sample-fast-api
+  template:
+    metadata:
+      labels:
+        app: sample-fast-api
+    spec:
+      containers:
+      - name: sample-fast-api-container
+        image: wintersalmon/sample-fast-api:latest
+        ports:
+        - containerPort: 5001

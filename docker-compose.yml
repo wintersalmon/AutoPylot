@@ -1,4 +1,12 @@
 services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
   ollama:
     image: ollama/ollama:latest
     container_name: ollama
@@ -13,6 +21,10 @@ services:
       dockerfile: server/Dockerfile
     container_name: server
     depends_on:
+      - mongodb
       - ollama
     ports:
       - "8000:8000"
+
+volumes:
+  mongo-data:
